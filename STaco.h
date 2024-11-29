@@ -9,6 +9,8 @@ class SuperTaco {
     string side_dish;
     float sa_price;
     float si_price;
+
+    //Same as in Taco.h, but this time it's used in salsas and side dishes
     const string salsas[3] = {"Red", "Green", "Fuego"};
     const float sal_prices[3] = {3.00, 3.00, 4.99};
     const string sides[3] = {"Frijoles Charros", "Guacamole", "Quesadilla"};
@@ -24,6 +26,7 @@ class SuperTaco {
         bool valid_salsa = false;
         bool valid_side = false;
         
+        //With the for loop, it searches for the meat and then the price
         for (int i = 0; i < 3; i++){
             if (chsalsa == salsas[i]){
                 salsa = chsalsa;
@@ -32,6 +35,7 @@ class SuperTaco {
                 break;
             }
         }
+        //However they will get default Red salsa if they don't enter anything valid
         if (!valid_salsa) {
             cout << "That salsa is not in our menu, I think you meant Red Salsa! " << endl;
             salsa = "Red";

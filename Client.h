@@ -13,9 +13,11 @@ class Client {
     string get_name() {return name;}
     float get_promo() {return promo;}
     void set_name(string na) {name=na;}
+    //in this setter, it turns the percent into the promo, which is also divided so it can represent the percentage
     void set_promo(int percent) {promo = percent / 100.0f;}
 
     void user_info() {
+        //This function collects the users data, the users name and if he has a discount or not, which will help with the price
         string na;
         string prask;
         int percent;
@@ -26,7 +28,7 @@ class Client {
         getline(cin, na);
         set_name(na);
         cout << "Welcome " << get_name() << "!" << endl;
-        cout << "Do you have a discount? Yes or no: ";
+        cout << "Do you have a discount? Yes or No: ";
         cin >> prask;
         if (prask == "Yes") {
             cout << "Please enter the promotion (The %): ";
@@ -41,7 +43,7 @@ class Client {
             cout << "Invalid input" << endl;
             set_promo(0);
         }
-
+        //If the user doesn't have a discount, it is simply ignored, the same goes for if the user enters something invalid
     }
 };
 
